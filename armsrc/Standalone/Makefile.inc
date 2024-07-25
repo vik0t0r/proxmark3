@@ -161,3 +161,8 @@ endif
 ifneq (,$(findstring WITH_STANDALONE_DANKARMULTI,$(APP_CFLAGS)))
     SRC_STANDALONE = dankarmulti.c
 endif
+
+# WITH_STANDALONE_HF_VIK0T0R
+ifneq (,$(findstring WITH_STANDALONE_HF_VIK0T0R,$(APP_CFLAGS)))
+    SRC_STANDALONE = hf_vik0t0r.c
+endif
