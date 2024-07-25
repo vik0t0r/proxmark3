@@ -270,8 +270,9 @@ void RunMod(void) {
             FpgaWriteConfWord(FPGA_MAJOR_MODE_OFF);
 
             // generate data to write
-            uint8_t block0[16]; 
-            char* block0String = "AAAAAAAABB08040004A15CB4EA021C90";
+            uint8_t block0[16];
+            //                    0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5
+            char* block0String = "AAAAAAAABB080400FFFFFFFFFFFFFFFF";
             hexStringToByteArray(block0String, (char*) &block0);
 
 
@@ -296,6 +297,24 @@ void RunMod(void) {
             block0[2] = genRandLong(&prng) & 0xFF;
 
             block0[3] = genRandLong(&prng) & 0xFF;
+
+            block0[8] = genRandLong(&prng) & 0xFF;
+
+            block0[9] = genRandLong(&prng) & 0xFF;
+
+            block0[10] = genRandLong(&prng) & 0xFF;
+
+            block0[11] = genRandLong(&prng) & 0xFF;
+
+            block0[12] = genRandLong(&prng) & 0xFF;
+
+            block0[13] = genRandLong(&prng) & 0xFF;
+
+            block0[14] = genRandLong(&prng) & 0xFF;
+
+            block0[15] = genRandLong(&prng) & 0xFF;
+
+
 
 
             // set BCC
